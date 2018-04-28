@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 import FirstComponent from './src/components/FirstComponent';
 import Header from './src/components/Header';
+import ProductList from './src/components/ProductList';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -26,23 +27,9 @@ export default class App extends React.Component {
   render() {
     const { message } = this.state;
     return (      
-      <View style={styles.container}>
+      <View>
         <Header title="Kimmy Menu World" />
-        <Text>My React ?Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-        <TextInput 
-        style={{height: 40, borderColor: 'gray', borderWidth: 2}}
-        value={this.state.message}
-        onChange={this.handleOnChange}
-        />
-        <FirstComponent message={message} />
-        <Button
-          onPress={this.handleOnPress}
-          title="Learn More"
-          color="#841584"
-          accessibilityLabel="Learn more about this purple button"
-        />        
+        <ProductList />      
       </View>
     );
   }
@@ -56,3 +43,21 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+/**
+ *         <Text>My React ?Open up App.js to start working on your app!</Text>
+        <Text>Changes you make will automatically reload.</Text>
+        <Text>Shake your phone to open the developer menu.</Text>
+        <TextInput 
+        style={{height: 40, borderColor: 'gray', borderWidth: 2}}
+        value={this.state.message}
+        onChange={this.handleOnChange}
+        />
+        <FirstComponent message={message} />
+        <Button
+          onPress={this.handleOnPress}
+          title="Learn More"
+          color="#841584"
+          accessibilityLabel="Learn more about this purple button"
+        />  
+ */
