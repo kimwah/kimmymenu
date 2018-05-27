@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, ScrollView } from 'react-native';
 import axios from 'axios';
-import ProductCard from './ProductCard';
+import Detail from './Detail';
 
 export default class ProductList extends Component {
     constructor(props) {
@@ -30,7 +30,7 @@ export default class ProductList extends Component {
            productList.forEach((prd)=>{
             let pKey = `pkey_${idx}`; 
             products.push(
-                <ProductCard product={prd} key={pKey}/>
+                <Detail product={prd} key={pKey}/>
             );
             idx += 1;
            });
@@ -39,10 +39,10 @@ export default class ProductList extends Component {
     }
     render() {
         return (
-            <View>
+            <ScrollView>
                 <Text> Product List.. </Text>
                 {this.renderList()}
-            </View>
+            </ScrollView>
         );
     }
 }

@@ -1,17 +1,12 @@
 import React, { Component } from 'react';
 import { View, Text, Button, Image } from 'react-native';
 
-export default class ProductCard extends Component {
+export default class Card extends Component {
   render() {
-    const { title, artist, url, image, thumbnail_image } = this.props.product;
     const { containerStyle } = styles;
     return (
       <View style={containerStyle}>
-        <Text>{title}</Text>
-        <Text>{artist}</Text>
-        <Text>{url}</Text>
-        <Text>{image}</Text>
-        <Image style={{ width: 50, height: 50 }} source={{ uri: thumbnail_image }} />
+        {this.props.children}
       </View>
     );
   }
@@ -33,3 +28,11 @@ const styles = {
     marginTop: 10,
   }
 };
+
+/**
+ *         <Text>{title}</Text>
+        <Text>{artist}</Text>
+        <Text>{url}</Text>
+        <Text>{image}</Text>
+        <Image style={{ width: 50, height: 50 }} source={{ uri: thumbnail_image }} />
+ */
